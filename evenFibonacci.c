@@ -1,10 +1,21 @@
 #include <stdio.h>
-#include <vector>
-int fibonacci(){
-	vector<int> fibo;
-	fibo[0] = 1;
-	fibo[2] = 2;
-	for(int i=0; i<fibo.size(); ++i)
-		printf("%d\n", fibo[1]);
+int fib(int n){
+	int f[n+1];
+	int i;
+	int sum = 0;
+	f[0] = 0;
+	f[1] = 1;
+	for(i = 2; i <= n; i++){
+		f[i] = f[i-1] + f[i-2];
+		if(f[i] % 2 == 0)
+			sum += f[i];
+	}
+	return f[n];
+	return sum;
+}
+int main(){
+	int n = 9;
+	printf("%d", fib(n));
+	printf("%d", sum);
 	return 0;
 }
